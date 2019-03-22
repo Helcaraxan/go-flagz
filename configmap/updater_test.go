@@ -65,7 +65,7 @@ func (s *updaterTestSuite) TearDownTest() {
 }
 
 func (s *updaterTestSuite) copyTestDataToDir() {
-	copyCmd := exec.Command("cp", "--archive", "testdata", s.tempDir)
+	copyCmd := exec.Command("unzip", "testdata.zip", "-d", s.tempDir)
 	require.NoError(s.T(), copyCmd.Run(), "copying testdata directory to tempdir must not fail")
 }
 
